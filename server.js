@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/taskmanager', {
   useUnifiedTopology: true
 });
 
-// User Schema
+
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
@@ -54,7 +54,7 @@ const auth = async (req, res, next) => {
   }
 };
 
-// Auth Routes
+
 app.post('/api/auth/register', async (req, res) => {
   try {
     const { username, email, password } = req.body;
